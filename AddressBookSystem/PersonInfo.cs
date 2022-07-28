@@ -8,18 +8,18 @@ namespace AddressBookSystem
 {
     class PersonInfo
     {
-        public string firstName { get; set; }
-        public string lastName { get; set; }
-        public string city { get; set; }
-        public string state { get; set; }
-        public int zip { get; set; }
-        private int _mobileNum { get; set; }
-        public string emailID { get; set; }
-        public int MobileNum
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public int Zip { get; set; }
+        private double _MobileNum { get; set; }
+        public string EmailID { get; set; }
+        public double MobileNum
         {
             get
             {
-                return _mobileNum;
+                return _MobileNum;
             }
             set
             {
@@ -30,7 +30,7 @@ namespace AddressBookSystem
                 }
                 else
                 {
-                    _mobileNum = value;
+                    _MobileNum = value;
                 }
             }
         }
