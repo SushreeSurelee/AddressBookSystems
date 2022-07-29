@@ -15,7 +15,7 @@ namespace AddressBookSystem
             int option;
             do
             {
-                Console.WriteLine("Please choose number as shown below\n1:Add Contacts.\n2:Display Contacts\n3:Edit Contacts.\n4:Exit");
+                Console.WriteLine("Please choose number as shown below to execute that task\n1:Add Contacts.\n2:Display Contacts\n3:Edit Contacts.\n4:Delete Contact.\n5:Exit");
                 option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -29,12 +29,15 @@ namespace AddressBookSystem
                         addressBookManagement.EditContacts();
                         break;
                     case 4:
+                        addressBookManagement.DeletePerson();
+                        break;
+                    case 5:
                         break;
                     default:
                         Console.WriteLine("Invalid Input");
                        break;
                 }
-            } while (option != 4);
+            } while (option != 5);
             Console.ReadLine();
         }
     }

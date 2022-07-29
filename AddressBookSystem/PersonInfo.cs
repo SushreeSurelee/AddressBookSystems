@@ -13,27 +13,7 @@ namespace AddressBookSystem
         public string City { get; set; }
         public string State { get; set; }
         public int Zip { get; set; }
-        private double _MobileNum;
+        public double MobileNum { get; set; }
         public string EmailID { get; set; }
-        public double MobileNum
-        {
-            get
-            {
-                return _MobileNum;
-            }
-            set
-            {
-                if (value < 10)
-                {
-                    Console.WriteLine("Enter mobile number consist of 10 digits.");
-                    return;
-                }
-                else
-                {
-                    _MobileNum = value;
-                }
-            }
-        }
-
     }
 }

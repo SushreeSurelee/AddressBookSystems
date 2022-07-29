@@ -9,9 +9,10 @@ namespace AddressBookSystem
     class AddressBookManagement
     {
         List<PersonInfo> listOfContacts = new List<PersonInfo>();
+        PersonInfo personInfo = new PersonInfo();
         public void AddContacts()
         {
-            PersonInfo personInfo = new PersonInfo();
+            
             Console.Write("Enter First Name: ");
             personInfo.FirstName = Console.ReadLine();
             Console.Write("Enter Last Name: ");
@@ -78,6 +79,18 @@ namespace AddressBookSystem
                     }
                 }
             }
-        }     
+        }
+        public void DeletePerson()
+        {
+            Console.WriteLine("To delete the contact list enter the firstname of the person");
+            string deleteName = Console.ReadLine();
+            foreach (var data in listOfContacts)
+            {
+                if(data.FirstName==deleteName)
+                {
+                    listOfContacts.Remove(personInfo);
+                }
+            }
+        }
     }
 }
