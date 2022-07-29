@@ -13,7 +13,7 @@ namespace AddressBookSystem
         public string City { get; set; }
         public string State { get; set; }
         public int Zip { get; set; }
-        private double _MobileNum { get; set; }
+        private double _MobileNum;
         public string EmailID { get; set; }
         public double MobileNum
         {
@@ -34,5 +34,6 @@ namespace AddressBookSystem
                 }
             }
         }
+
     }
 }

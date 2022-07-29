@@ -12,17 +12,29 @@ namespace AddressBookSystem
         {
             Console.WriteLine("Welcome to Address Book Program");
             AddressBookManagement addressBookManagement = new AddressBookManagement();
-
-            Console.WriteLine("Please choose number as shown below\n1:Add Contacts.");
-            int option = Convert.ToInt32(Console.ReadLine());
-            switch (option)
+            int option;
+            do
             {
-                case 1:
-                    Console.WriteLine("Enter how many contacts you wish to add in AddressBook.");
-                    int numOfContacts = Convert.ToInt32(Console.ReadLine());
-                    addressBookManagement.AddContacts(numOfContacts);
-                    break;
-            }
+                Console.WriteLine("Please choose number as shown below\n1:Add Contacts.\n2:Display Contacts\n3:Edit Contacts.\n4:Exit");
+                option = Convert.ToInt32(Console.ReadLine());
+                switch (option)
+                {
+                    case 1:
+                        addressBookManagement.AddContacts();
+                        break;
+                    case 2:
+                        addressBookManagement.DisplayContacts();
+                        break;
+                    case 3:
+                        addressBookManagement.EditContacts();
+                        break;
+                    case 4:
+                        break;
+                    default:
+                        Console.WriteLine("Invalid Input");
+                       break;
+                }
+            } while (option != 4);
             Console.ReadLine();
         }
     }
