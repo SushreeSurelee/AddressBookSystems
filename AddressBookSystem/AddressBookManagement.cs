@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AddressBookSystem
 {
     class AddressBookManagement
     {
-        List<PersonInfo> listOfContacts = new List<PersonInfo>();
-       
+        private List<PersonInfo> listOfContacts = new List<PersonInfo>();
         public void AddContacts()
         {
             PersonInfo personInfo = new PersonInfo();

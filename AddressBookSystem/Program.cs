@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AddressBookSystem
 {
@@ -10,7 +6,7 @@ namespace AddressBookSystem
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Address Book Program");
+            Console.WriteLine("Welcome to Address Book System\n");
             AddressBookManagement addressBookManagement = new AddressBookManagement();
             int option;
             do
