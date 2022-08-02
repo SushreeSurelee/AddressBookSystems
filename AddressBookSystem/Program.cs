@@ -35,10 +35,9 @@ namespace AddressBookSystem
                         break;
                     default:
                         Console.WriteLine("Invalid Input");
-                       break;
+                        break;
                 }
             } while (option != 5);
-            Console.ReadLine();
         }
     }
 }

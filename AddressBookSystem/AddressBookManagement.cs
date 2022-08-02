@@ -9,10 +9,10 @@ namespace AddressBookSystem
     class AddressBookManagement
     {
         List<PersonInfo> listOfContacts = new List<PersonInfo>();
-        PersonInfo personInfo = new PersonInfo();
+       
         public void AddContacts()
         {
-            
+            PersonInfo personInfo = new PersonInfo();
             Console.Write("Enter First Name: ");
             personInfo.FirstName = Console.ReadLine();
             Console.Write("Enter Last Name: ");
@@ -31,7 +31,7 @@ namespace AddressBookSystem
         }
         public void DisplayContacts()
         {
-            foreach (var data in listOfContacts)
+            foreach (PersonInfo data in listOfContacts)
             {
                 Console.WriteLine("\nBelow is the details of person in Address Book.");
                 Console.WriteLine("\nFirst name : "+data.FirstName+ "\nLast name : " + data.LastName+"\nCity : "+data.City+"\nState : "+data.State+"\nZip code : "+data.Zip+"\nMobile Number : "+data.MobileNum+"\nEmail ID : "+data.EmailID+ "\n");
@@ -41,8 +41,10 @@ namespace AddressBookSystem
         {
             Console.WriteLine("To edit the contact list enter the firstname of the person");
             string editName = Console.ReadLine();
-            foreach(var data in listOfContacts)
+
+            for(int i=0;i<listOfContacts.Count;i++)
             {
+                PersonInfo data = listOfContacts[i];
                 if (editName == data.FirstName)
                 {
                     Console.WriteLine("To edit contacts enter\n1.Lastname\n2.City\n3.State\n4.Zip\n5.Mobile Number\n6.Email ID");
@@ -78,17 +80,27 @@ namespace AddressBookSystem
                             break;
                     }
                 }
+                else
+                {
+                    Console.WriteLine("Please enter the valid name.\n");
+                }
             }
         }
         public void DeletePerson()
         {
             Console.WriteLine("To delete the contact list enter the firstname of the person");
             string deleteName = Console.ReadLine();
-            foreach (var data in listOfContacts)
+            for (int i = 0; i < listOfContacts.Count; i++)
             {
+                PersonInfo data = listOfContacts[i];
                 if(data.FirstName==deleteName)
                 {
-                    listOfContacts.Remove(personInfo);
+                    listOfContacts.Remove(data);
+                    Console.WriteLine("You have sucessfully deleted {0}'s contact.\n",deleteName);
+                }
+                else
+                {
+                    Console.WriteLine("Please enter the valid name which is present inside of the address book.\n");
                 }
             }
         }
