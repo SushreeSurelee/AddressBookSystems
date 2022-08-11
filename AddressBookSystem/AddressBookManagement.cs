@@ -6,24 +6,36 @@ namespace AddressBookSystem
     class AddressBookManagement
     {
         private List<PersonInfo> listOfContacts = new List<PersonInfo>();
-        public void AddContacts()
+        Dictionary<string, List<PersonInfo>> listOfBooks = new Dictionary<string, List<PersonInfo>>();
+        public void AddContacts(string addressBookName,int numOfContacts)
         {
+            listOfContacts.Clear();
             PersonInfo personInfo = new PersonInfo();
-            Console.Write("Enter First Name: ");
-            personInfo.FirstName = Console.ReadLine();
-            Console.Write("Enter Last Name: ");
-            personInfo.LastName = Console.ReadLine();
-            Console.Write("Enter City: ");
-            personInfo.City = Console.ReadLine();
-            Console.Write("Enter State: ");
-            personInfo.State = Console.ReadLine();
-            Console.Write("Enter Zip: ");
-            personInfo.Zip = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter Phone Number: ");
-            personInfo.MobileNum = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Enter Email ID: ");
-            personInfo.EmailID = Console.ReadLine();
-            listOfContacts.Add(personInfo);
+            int count = 0;
+            while (true)
+            {
+                Console.Write("Enter First Name: ");
+                personInfo.FirstName = Console.ReadLine();
+                Console.Write("Enter Last Name: ");
+                personInfo.LastName = Console.ReadLine();
+                Console.Write("Enter City: ");
+                personInfo.City = Console.ReadLine();
+                Console.Write("Enter State: ");
+                personInfo.State = Console.ReadLine();
+                Console.Write("Enter Zip: ");
+                personInfo.Zip = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Enter Phone Number: ");
+                personInfo.MobileNum = Convert.ToDouble(Console.ReadLine());
+                Console.Write("Enter Email ID: ");
+                personInfo.EmailID = Console.ReadLine();
+                listOfContacts.Add(personInfo);
+                count++;
+                if(count == numOfContacts)
+                {
+                    listOfBooks.Add(addressBookName, listOfContacts);
+                    break;
+                }
+            }
         }
         public void DisplayContacts()
         {
@@ -100,5 +112,6 @@ namespace AddressBookSystem
                 }
             }
         }
+        
     }
 }
